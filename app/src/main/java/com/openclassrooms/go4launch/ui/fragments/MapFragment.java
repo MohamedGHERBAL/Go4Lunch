@@ -29,16 +29,28 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.openclassrooms.go4launch.R;
+import com.openclassrooms.go4launch.databinding.FragmentMapBinding;
+
+import java.nio.BufferUnderflowException;
 
 
 public class MapFragment extends Fragment implements OnMapReadyCallback {
 
-    GoogleMap map;
+    //FragmentMapBinding binding;
 
+    GoogleMap map;
     Location currentLocation;
     FusedLocationProviderClient fusedLocationProviderClient;
+    private FloatingActionButton fab;
+
     private static final int REQUEST_CODE = 101;
+
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -54,8 +66,16 @@ public class MapFragment extends Fragment implements OnMapReadyCallback {
 
         @SuppressLint("InflateParams") View view = inflater.inflate(R.layout.fragment_map, null, false);
 
+        fab = (FloatingActionButton) view.findViewById(R.id.fab_mylocation);
+
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(getActivity());
         fetchLocation();
+
+        fab.setOnClickListener(view1 -> {
+            Log.e("MapFragment :", "FAB setOnClickListener is clicked !");
+            fetchLocation();
+        });
+
         return view;
     }
 
