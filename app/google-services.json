@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1057635533701",
+    "project_id": "go4launch-411ad",
+    "storage_bucket": "go4launch-411ad.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1057635533701:android:4893a2d2a7d49dd777faec",
+        "android_client_info": {
+          "package_name": "com.openclassrooms.go4launch"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1057635533701-4h1sg02sgiqs3ronajn3p0db5u25omk2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.openclassrooms.go4launch",
+            "certificate_hash": "72e81a1f303e21d9ac2031b3a0ca2bfa6988518f"
+          }
+        },
+        {
+          "client_id": "1057635533701-ns6r0t2s16dopb8n8h84g65tf20ssi0p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_Fy_i_To-1F2oFGZiYd4kC-OI-QMXa94"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1057635533701-ns6r0t2s16dopb8n8h84g65tf20ssi0p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

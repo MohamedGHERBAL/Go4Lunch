@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FC3F1B</color>
+    <color name="colorPrimaryDark">#b50504</color>
+    <color name="colorAccent">#FFA000</color>
+    <color name="colorAccentDark">#000000</color>
+    <color name="colorError">#FF5252</color>
+
+    <color name="colorGreen">#6BB18C</color>
+    <color name="colorSandLight">#ECDAAF</color>
+    <color name="colorSand">#EBCB94</color>
+
+    <color name="titleColor">#FFFFFF</color>
+    <color name="background_light">#FC3F1B</color>
+
+    <color name="fab_color">#FFFFFF</color>
+
+</resources>
