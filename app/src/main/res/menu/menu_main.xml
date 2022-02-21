@@ -4,7 +4,7 @@
     tools:context="com.openclassrooms.go4launch.ui.ProfileActivity">
 
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/action_search"
         android:icon="@drawable/ic_baseline_search_24dp"
         android:orderInCategory="0"
         android:title="@string/toolbar_title_main_activity"

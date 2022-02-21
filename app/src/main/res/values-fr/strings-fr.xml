@@ -1,5 +1,5 @@
 <resources>
-    <!-- Values Strings for : English (Default) -->
+    <!-- Values Strings for : Français -->
 
     <string name="app_name">Go4Launch</string>
 
@@ -41,17 +41,17 @@
     <string name="check_box_is_mentor">Etes-vous un mentor ?</string>
 
     <!-- BOTTOM NAVIGATION VIEW -->
-    <string name="bottom_navigation_menu_mapview">Map View</string>
-    <string name="bottom_navigation_menu_listview">List View</string>
-    <string name="bottom_navigation_menu_workmates">Workmates</string>
+    <string name="bottom_navigation_menu_mapview">Carte</string>
+    <string name="bottom_navigation_menu_listview">Liste</string>
+    <string name="bottom_navigation_menu_workmates">Collegues</string>
 
     <!-- PRINCIPAL ACTIVITY -->
-    <string name="toolbar_title_message">I\'m Hungry</string>
+    <string name="toolbar_title_message">J\'ai Faim !</string>
 
     <!--DETAIL RESTAURANT ACTIVITY-->
-    <string name="detail_restaurant_button_call">CALL</string>
-    <string name="detail_restaurant_button_like">LIKE</string>
-    <string name="detail_restaurant_button_website">WEBSITE</string>
+    <string name="detail_restaurant_button_call">TELEPHONE</string>
+    <string name="detail_restaurant_button_like">J\'AIME</string>
+    <string name="detail_restaurant_button_website">SITE WEB</string>
     <string name="no_phone_number">No phone number registered !</string>
     <string name="like_button">You like : </string>
     <string name="no_website">Website doesn\'t exist !</string>

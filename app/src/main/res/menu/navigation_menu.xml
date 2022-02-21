@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view"
     tools:ignore="HardcodedText">
 
     <item
-        android:id="@+id/nav_account"
+        android:id="@+id/nav_drawer_yourlunch"
+        android:icon="@drawable/ic_baseline_restaurant_24dp"
         android:title="Your Lunch" />
 
     <item
-        android:id="@+id/nav_settings"
+        android:id="@+id/nav_drawer_settings"
+        android:icon="@drawable/ic_baseline_settings_24dp"
         android:title="Settings" />
 
     <item
-        android:id="@+id/nav_logout"
+        android:id="@+id/nav_drawer_logout"
+        android:icon="@drawable/ic_baseline_logout_24dp"
         android:title="Logout" />
 
 </menu>

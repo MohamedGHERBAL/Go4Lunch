@@ -47,6 +47,10 @@ public class Result {
     @Expose
     private String reference;
 
+    @SerializedName("international_phone_number")
+    @Expose
+    private String internationalPhoneNumber;
+
     @SerializedName("scope")
     @Expose
     private String scope;
@@ -62,6 +66,19 @@ public class Result {
     @SerializedName("price_level")
     @Expose
     private Integer priceLevel;
+
+    @SerializedName("results")
+    @Expose
+    private List<Result> results = new ArrayList<Result>();
+
+    @SerializedName("numUsers")
+    @Expose
+    private int numUsers;
+
+    @SerializedName("website")
+    @Expose
+    private String website;
+
 
     /**
      *
@@ -228,6 +245,24 @@ public class Result {
     /**
      *
      * @return
+     * The internationalPhoneNumber
+     */
+    public String getInternationalPhoneNumber() {
+        return internationalPhoneNumber;
+    }
+
+    /**
+     *
+     * @param internationalPhoneNumber
+     * The internationalPhoneNumber
+     */
+    public void setInternationalPhoneNumber(String internationalPhoneNumber) {
+        this.internationalPhoneNumber = internationalPhoneNumber;
+    }
+
+    /**
+     *
+     * @return
      * The scope
      */
     public String getScope() {
@@ -295,6 +330,56 @@ public class Result {
      */
     public void setPriceLevel(Integer priceLevel) {
         this.priceLevel = priceLevel;
+    }
+
+    /**
+     *
+     * @return
+     * The results
+     */
+    public List<Result> getResults() {
+        return results;
+    }
+
+    /**
+     *
+     * @param results
+     * The results
+     */
+    public void setResults(List<Result> results) {
+        this.results = results;
+    }
+
+    /**
+     *
+     * @return
+     * The numUsers
+     */
+    public int getNumUsers(){ return numUsers; }
+
+    /**
+     *
+     * @param numUsers
+     * The numUsers
+     */
+    public void setNumUsers(int numUsers){ this.numUsers = numUsers; }
+
+    /**
+     *
+     * @return
+     * The website
+     */
+    public String getWebsite() {
+        return website;
+    }
+
+    /**
+     *
+     * @param website
+     * The website
+     */
+    public void setWebsite(String website) {
+        this.website = website;
     }
 
 }

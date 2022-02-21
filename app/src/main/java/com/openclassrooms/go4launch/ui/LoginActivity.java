@@ -12,7 +12,6 @@ import com.google.android.material.snackbar.Snackbar;
 import com.openclassrooms.go4launch.R;
 import com.openclassrooms.go4launch.databinding.ActivityLoginBinding;
 import com.openclassrooms.go4launch.databinding.ActivityMainBinding;
-import com.openclassrooms.go4launch.injections.AuthServices;
 import com.openclassrooms.go4launch.manager.UserManager;
 
 import java.util.Arrays;
@@ -23,9 +22,11 @@ import java.util.List;
  */
 public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
 
+    // For Datas
     private static final int RC_SIGN_IN = 123;
+
+    // For Auth
     private UserManager userManager = UserManager.getInstance();
-    private AuthServices authServices;
 
     @Override
     ActivityLoginBinding getViewBinding() {
@@ -52,7 +53,7 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
     private void setupListeners() {
         // Login|Profile Button
         binding.loginGoogleLoginButton.setOnClickListener(view -> {
-            if(userManager.isCurrentUserLogged()){
+            if(userManager.isCurrentUserLogged()) {
                 startProfileActivity();
             } else {
                 startSignInActivity();

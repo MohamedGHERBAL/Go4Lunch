@@ -14,12 +14,20 @@ public class NearByAPIResponse {
     @SerializedName("html_attributions")
     @Expose
     private List<Object> htmlAttributions = new ArrayList<Object>();
+
     @SerializedName("next_page_token")
     @Expose
     private String nextPageToken;
+
+    // No List Result
+    @SerializedName("result")
+    @Expose
+    private Result result;
+
     @SerializedName("results")
     @Expose
     private List<Result> results = new ArrayList<Result>();
+
     @SerializedName("status")
     @Expose
     private String status;
@@ -58,6 +66,14 @@ public class NearByAPIResponse {
      */
     public void setNextPageToken(String nextPageToken) {
         this.nextPageToken = nextPageToken;
+    }
+
+    public Result getResult() {
+        return result;
+    }
+
+    public void setResult(Result result) {
+        this.result = result;
     }
 
     /**

@@ -3,7 +3,6 @@ package com.openclassrooms.go4launch.model;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -14,9 +13,14 @@ public class OpeningHours {
     @SerializedName("open_now")
     @Expose
     private Boolean openNow;
+/*
+    @SerializedName("periods")
+    @Expose
+    private List<Period> periods = null;
+*/
     @SerializedName("weekday_text")
     @Expose
-    private List<Object> weekdayText = new ArrayList<Object>();
+    private List<Object> weekdayText = null;
 
     /**
      *
@@ -35,6 +39,16 @@ public class OpeningHours {
     public void setOpenNow(Boolean openNow) {
         this.openNow = openNow;
     }
+
+/*
+    public List<Period> getPeriods() {
+        return periods;
+    }
+
+    public void setPeriods(List<Period> periods) {
+        this.periods = periods;
+    }
+*/
 
     /**
      *

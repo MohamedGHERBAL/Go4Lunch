@@ -17,28 +17,31 @@ import retrofit2.http.Query;
  */
 public interface RetroInterface {
 
-    @GET("place/nearbysearch/json")
-    Call<NearByAPIResponse> getNearBy(
-            @Query("location") String location,
-            @Query("radius") int radius,
+    /**
+     * Retrofit get annotation with our URL
+     * And our method that will return us details of student.
+     */
+    @GET("place/nearbysearch/json?sensor=true&key=AIzaSyCl61H4olbn8hk-whs8j4CYC5KEipU4dcY")
+    Call<NearByAPIResponse> getNearbyPlaces(
             @Query("type") String type,
-            @Query("keyword") String keyword,
-            @Query("key") String key
+            @Query("location") String location,
+            @Query("radius") int radius);
+
+    /*
+     *
+     *
+     */
+    @GET("place/details/json?categories=basic&key=AIzaSyCl61H4olbn8hk-whs8j4CYC5KEipU4dcY")
+    Call<NearByAPIResponse> getDetailResult(
+            @Query("place_id") String placeId
     );
 
-    /* // USE FOR TEMPLATE //
-    @GET("/api/unknown")
-    //Call<MultipleResource> doGetListResources();
-
-    @POST("/api/users")
-    Call<User> createUser(@Body User user);
-
-    @GET("/api/users?")
-    Call<UserList> doGetUserList(@Query("page") String page);
-
-    @FormUrlEncoded
-    @POST("/api/users?")
-    Call<UserList> doCreateUserWithField(@Field("name") String name, @Field("job") String job);
-    */
+    @GET("textsearch/json")
+    Call<Result> getResultFromTextSearch(@Query("query") String query,
+                                         @Query("type") String type,
+                                         @Query("key") String key,
+                                         @Query("radius") Integer radius,
+                                         @Query("maxprice") Integer maxPrice,
+                                         @Query("opennow") Boolean openNow);
 
 }

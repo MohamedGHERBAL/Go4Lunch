@@ -11,6 +11,7 @@ public class Location {
     @SerializedName("lat")
     @Expose
     private Double lat;
+
     @SerializedName("lng")
     @Expose
     private Double lng;
