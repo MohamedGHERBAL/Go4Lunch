@@ -39,6 +39,7 @@ public class SettingsActivity extends AppCompatActivity {
     // For Toolbar
     private MaterialToolbar toolbar;
 
+    // For notification
     public static final String PREFS= "PREFS";
     SharedPreferences prefs;
 
@@ -57,9 +58,8 @@ public class SettingsActivity extends AppCompatActivity {
         this.configureToolbar();
 
         setAppLocale("fr"); // "fr" Or "en"
-
         listItems = getResources().getStringArray(R.array.choose_language);
-
+/*
         // For Language
         settingsBinding.button.setOnClickListener(view1 -> {
             AlertDialog.Builder mBuilder = new AlertDialog.Builder(SettingsActivity.this);
@@ -80,6 +80,7 @@ public class SettingsActivity extends AppCompatActivity {
             AlertDialog mDialog = mBuilder.create();
             mDialog.show();
         });
+*/
 
         // For Notification
         settingsBinding.notificationsSwitch.setChecked(prefs.getBoolean("switch_checked", false));
@@ -87,7 +88,7 @@ public class SettingsActivity extends AppCompatActivity {
             WorkManager mWorkManager = WorkManager.getInstance(this);
             if (isChecked) {
 
-                long delay = calculateDelay(12, 0, 0);
+                long delay = calculateDelay(14, 10, 0);
 
                 PeriodicWorkRequest workRequest = new PeriodicWorkRequest.Builder(MyWorker.class,
                         1, TimeUnit.DAYS)
@@ -149,6 +150,7 @@ public class SettingsActivity extends AppCompatActivity {
                 : (TimeUnit.DAYS.toSeconds(1)+delta));
     }
 
+    // For Toolbar
     private void configureToolbar() {
         Log.i(TAG, "configureToolbar");
 
@@ -160,6 +162,10 @@ public class SettingsActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
+    public boolean onCreateOptionsMenu(Menu menu) {
+        return true;
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -168,10 +174,6 @@ public class SettingsActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
-    }
-
-    public boolean onCreateOptionsMenu(Menu menu) {
-        return true;
     }
 
 }
