@@ -31,6 +31,8 @@ import org.junit.runner.RunWith;
 import static org.hamcrest.Matchers.allOf;
 import static org.junit.Assert.*;
 
+import static java.lang.Thread.sleep;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.openclassrooms.go4launch.model.User;
@@ -51,6 +53,7 @@ public class MainActivityInstrumentedTest {
     private User mUser;
     private ArrayList likedRestaurants = new ArrayList();
 
+    // AppContext
     @Test
     public void useAppContext() {
         // Context of the app under test.
@@ -58,9 +61,11 @@ public class MainActivityInstrumentedTest {
         assertEquals("com.openclassrooms.go4launch", appContext.getPackageName());
     }
 
+    // Rules
     @Rule
     public ActivityTestRule<MainActivity> rule = new ActivityTestRule<>(MainActivity.class);
 
+    // Init
     @Before
     public void init() {
         FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
@@ -69,22 +74,12 @@ public class MainActivityInstrumentedTest {
         mUser = new User("uid", "name", "email", "urlPicture", "", "", likedRestaurants);
     }
 
-    private static Matcher<View> childAtPosition(
-            final Matcher<View> parentMatcher, final int position) {
-        return new TypeSafeMatcher<View>() {
-            @Override
-            public void describeTo(Description description) {
-                description.appendText("Child at position " + position + " in parent ");
-                parentMatcher.describeTo(description);
-            }
-
-            @Override
-            public boolean matchesSafely(View view) {
-                ViewParent parent = view.getParent();
-                return parent instanceof ViewGroup && parentMatcher.matches(parent)
-                        && view.equals(((ViewGroup) parent).getChildAt(position));
-            }
-        };
+    public void delayer() {
+        try {
+            sleep(5000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     // Show MapFragment
