@@ -277,9 +277,9 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
         FirebaseUser user = userManager.getCurrentUser();
 
         UserHelper.getUsersCollection().document(getCurrentUser().getUid()).get().addOnCompleteListener(task -> {
-            if(task.isSuccessful()){
+            if (task.isSuccessful()) {
                 DocumentSnapshot doc = task.getResult();
-                if(!doc.exists()){
+                if (!doc.exists()) {
                     String urlPicture = (getCurrentUser().getPhotoUrl() != null) ? getCurrentUser().getPhotoUrl().toString() : null;
                     String name = getCurrentUser().getDisplayName();
                     String uid = getCurrentUser().getUid();
@@ -292,7 +292,6 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding> {
                 }
             }
         });
-
     }
 
     @Nullable

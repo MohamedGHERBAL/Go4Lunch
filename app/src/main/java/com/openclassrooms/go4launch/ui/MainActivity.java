@@ -105,7 +105,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         View view = mainBinding.getRoot();
         setContentView(view);
 
-        //this.createUserInFirestore();
         this.configureToolBar();
         this.configureDrawerLayout();
         this.configureNavigationView();
