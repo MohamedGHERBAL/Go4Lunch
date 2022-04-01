@@ -1,6 +1,10 @@
 package com.openclassrooms.go4launch.manager;
 
+import android.content.Context;
+
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseUser;
+import com.openclassrooms.go4launch.model.User;
 import com.openclassrooms.go4launch.repositories.UserRepository;
 
 /**
@@ -28,12 +32,13 @@ public class UserManager {
         }
     }
 
-    public Boolean isCurrentUserLogged() {
+   public Boolean isCurrentUserLogged() {
         return (userRepository.getCurrentUser() != null);
     }
 
     public FirebaseUser getCurrentUser() {
         return userRepository.getCurrentUser();
     }
+
 
 }

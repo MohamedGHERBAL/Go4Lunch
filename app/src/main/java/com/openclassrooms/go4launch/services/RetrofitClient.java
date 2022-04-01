@@ -30,15 +30,11 @@ public class RetrofitClient {
     // For Log.d
     private static final String TAG = RetrofitClient.class.getSimpleName();
 
-    private GoogleMap mMap;
-    double latitude;
-    double longitude;
+    // For DATA
     private int PROXIMITY_RADIUS = 10000;
-
     private static Retrofit retrofit = null;
     private static RetrofitClient retrofitClient;
     private static String BASE_URL = "https://maps.googleapis.com/maps/api/";
-    private static final String KEY = "AIzaSyCl61H4olbn8hk-whs8j4CYC5KEipU4dcY";
 
     public static Retrofit getClient() {
 

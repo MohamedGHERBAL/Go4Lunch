@@ -8,6 +8,8 @@
         android:icon="@drawable/ic_baseline_search_24dp"
         android:orderInCategory="0"
         android:title="@string/toolbar_title_main_activity"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="ifRoom"
+        android:name="com.google.android.gms.location.places.ui.PlaceAutocompleteFragment"
+        />
 
 </menu>

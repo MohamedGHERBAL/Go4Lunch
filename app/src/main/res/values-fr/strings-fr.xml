@@ -3,7 +3,7 @@
 
     <string name="app_name">Go4Launch</string>
 
-    <string name="main_activity_description">Find a nice restaurant and invite your co-corkers for lunch!</string>
+    <string name="main_activity_description">Trouvez un bon restaurant et invitez vos collegues à déjeuner !</string>
 
     <string name="login">Connexion</string>
     <string name="chat_with_mentor">Crée un compte</string>
@@ -12,9 +12,11 @@
     <!-- NOTIFICATION SERVICE -->
     <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
     <string name="notification_title">"Vous avez reçu une notification"</string>
+    <string name="notification_message_with_restId">Aujourd\'hui vous mangez au : </string>
+    <string name="notification_message_without_restId">Vous n\'avez pas encore choisi où manger ?!</string>
 
     <!-- MAIN ACTIVITY -->
-    <string name="toolbar_title_main_activity">I\'m Hungry !</string>
+    <string name="toolbar_title_main_activity">J\'ai faim</string>
     <string name="error_not_connected">Vous devez vous connecter !</string>
     <string name="error_authentication_canceled">Authentification annulée&#8230;</string>
     <string name="error_no_internet">Aucune connexion internet !</string>
@@ -22,11 +24,14 @@
     <string name="connection_succeed">Authentification réussie !</string>
     <string name="button_login_text_logged">Afficher le profil</string>
     <string name="button_login_text_not_logged">Connexion</string>
+    <string name="No_restaurant_selected_yet">Vous n\'avez pas encore choisi de restaurant !</string>
 
     <!-- LOGIN ACTIVITY -->
-    <string name="main_activity_sub_title">Find a nice restaurant and invite your co-workers for lunch!</string>
-    <string name="facebook_login_button">Sign in with Facebook</string>
-    <string name="google_login_button">Sign in with Google</string>
+    <string name="main_activity_sub_title">Trouvez un bon restaurant et invitez vos collegues à déjeuner !</string>
+    <string name="email_login_button">Continuer un email</string>
+    <string name="facebook_login_button">Continuer avec Facebook</string>
+    <string name="google_login_button">Continuer avec Google</string>
+    <string name="twitter_login_button">Continuer avec Twitter</string>
     <string name="toolbar_title_login_activity">Votre Profil</string>
     <string name="text_input_username">Nom d\'utilisateur</string>
     <string name="text_view_email">Adresse email :</string>
@@ -36,8 +41,11 @@
     <string name="info_no_email_found">Aucune adresse email</string>
     <string name="info_no_username_found">Aucun nom d\'utilisateur</string>
     <string name="popup_message_confirmation_delete_account">Es-tu sûr(e) de vouloir supprimer ton compte ?</string>
-    <string name="popup_message_choice_yes">Oui !</string>
+    <string name="popup_message_choice_yes">Oui</string>
     <string name="popup_message_choice_no">Non</string>
+    <string name="email_already_used">Adresse e-mail déjà liée à un compte existant.</string>
+    <string name="email_already_used_message">&#160;est déjà lié à un compte existant via la connexion Google.
+        \nSouhaitez-vous vous connecter à votre compte Google pour lier la méthode de connexion %1$s à votre compte Go4Lunch ?</string>
     <string name="check_box_is_mentor">Etes-vous un mentor ?</string>
 
     <!-- BOTTOM NAVIGATION VIEW -->
@@ -48,24 +56,33 @@
     <!-- PRINCIPAL ACTIVITY -->
     <string name="toolbar_title_message">J\'ai Faim !</string>
 
+    <!-- WORKMATES ACTIVITY -->
+    <string name="is_eating_at"> mange à </string>
+    <string name="hasnt_decided"> n\'a pas encore fait son choix</string>
+
     <!--DETAIL RESTAURANT ACTIVITY-->
+    <string name="restaurant_name">Nom du Restaurant</string>
+    <string name="detail_restaurant_address">Adresse</string>
     <string name="detail_restaurant_button_call">TELEPHONE</string>
     <string name="detail_restaurant_button_like">J\'AIME</string>
     <string name="detail_restaurant_button_website">SITE WEB</string>
-    <string name="no_phone_number">No phone number registered !</string>
-    <string name="like_button">You like : </string>
-    <string name="no_website">Website doesn\'t exist !</string>
-    <string name="place_open">Open</string>
-    <string name="place_close">Close</string>
+    <string name="no_phone_number">Aucun numéro de téléphone enregistrer !</string>
+    <string name="like_button">J\'aime : </string>
+    <string name="no_website">Le site web n\'existe pas !</string>
+    <string name="place_open">Ouvert</string>
+    <string name="place_close">Fermé</string>
 
     <!-- SETTINGS ACTIVITY -->
-    <string name="toolbar_title_settings_activity">Setting</string>
-    <string name="button_text">Change language</string>
-    <string name="alert_dialog_menu_language">Choose your language</string>
+    <string name="toolbar_title_settings_activity">Paramètres</string>
+    <string name="button_text">Changer la langue</string>
+    <string name="alert_dialog_menu_language">Choisir une langue</string>
     <string-array name="choose_language">
         <item>English</item>
         <item>Français</item>
     </string-array>
+    <string name="enable_notifications_rest_alert">Activer les notifications pour le resto</string>
+    <string name="notifications_on">Notications activées</string>
+    <string name="notifications_off">Notications désactivées</string>
 
     <!-- MENTOR_CHAT ACTIVITY -->
     <string name="toolbar_title_mentor_chat_activity">Chats de discussions</string>
@@ -78,16 +95,16 @@
     <string name="facebook_application_id">874253313220858</string>
     <string name="fb_login_protocol_scheme">fb874253313220858</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_map_fragment">I\'m Hungry!</string>
-    <string name="hello_list_fragment">I\'m Hungry!</string>
-    <string name="hello_workmates_fragment">Available workmates</string>
+    <string name="hello_map_fragment">J\'ai faim</string>
+    <string name="hello_list_fragment">J\'ai faim</string>
+    <string name="hello_workmates_fragment">Collegue disponibles</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <!-- Navigation Drawer : to toggle the open close button of the navigation drawer -->
     <!-- Used in NavigationDrawer -->
-    <string name="nav_drawer_open">Open navigation drawer</string>
-    <string name="nav_drawer_close">Close navigation drawer</string>
+    <string name="nav_drawer_open">Ouvrir le menu</string>
+    <string name="nav_drawer_close">Fermé le menu</string>
 
     <string name="default_city">San Francisco</string>
     <string name="place_type">restaurant</string>

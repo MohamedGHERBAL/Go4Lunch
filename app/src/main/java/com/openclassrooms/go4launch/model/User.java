@@ -1,5 +1,7 @@
 package com.openclassrooms.go4launch.model;
 
+import java.util.ArrayList;
+
 /**
  * Created by Mohamed GHERBAL (pour OC) on 27/01/2022
  */
@@ -17,10 +19,17 @@ public class User {
     /** URL Picture */
     private String urlPicture;
 
-    //
-    public User() {
-        // For Firestore
-    }
+    /** Restaurant ID */
+    private String restId;
+
+    /** Restaurant Name */
+    private String restName;
+
+    /** Liked Restaurants */
+    private ArrayList<String> likedRestaurants;
+
+
+    public User() { }
 
     /**
      * Constructor
@@ -28,12 +37,18 @@ public class User {
      * @param name
      * @param email
      * @param urlPicture
+     * @param restId
+     * @param restName
+     * @param likedRestaurants
      */
-    public User(String uid, String name, String email, String urlPicture) {
+    public User(String uid, String name, String email, String urlPicture, String restId, String restName, ArrayList<String> likedRestaurants) {
         this.uid = uid;
         this.name = name;
         this.email = email;
         this.urlPicture = urlPicture;
+        this.restId = restId;
+        this.restName = restName;
+        this.likedRestaurants = likedRestaurants;
     }
 
     //---
@@ -65,5 +80,14 @@ public class User {
     public void setUrlPicture(String urlPicture) {
         this.urlPicture = urlPicture;
     }
+
+    public String getRestId() { return restId; }
+    public void setRestId(String restId) { this.restId = restId; }
+
+    public String getRestName() { return restName; }
+    public void setRestName(String restName) { this.restName = restName; }
+
+    public ArrayList<String> getLikedRestaurants() { return likedRestaurants; }
+    public void setLikedRestaurants(ArrayList<String> likedRestaurants) { this.likedRestaurants = likedRestaurants; }
 
 }

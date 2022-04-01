@@ -27,4 +27,7 @@
 
     <!-- Default NavigationView Header height -->
     <dimen name="nav_header_height">176dp</dimen>
+
+    <!-- For DetailRestaurantActivity -->
+    <dimen name="app_bar_height">220dp</dimen>
 </resources>

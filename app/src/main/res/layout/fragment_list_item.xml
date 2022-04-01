@@ -52,6 +52,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/large_margin"
+        android:src="@drawable/ic_baseline_person_outline_24dp"
         app:layout_constraintBottom_toBottomOf="@id/list_view_vicinity_text_view"
         app:layout_constraintEnd_toStartOf="@id/list_view_workmates_text_view"
         app:layout_constraintStart_toEndOf="@id/list_view_vicinity_text_view"
@@ -100,7 +101,7 @@
         app:layout_constraintBottom_toBottomOf="@id/list_view_openingHours_text_view"
         app:layout_constraintEnd_toStartOf="@id/list_view_photo_image_view"
         app:layout_constraintTop_toTopOf="@id/list_view_openingHours_text_view"
-        tools:rating="2" />
+        tools:rating="1" />
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/list_view_photo_image_view"

@@ -355,14 +355,20 @@ public class Result {
      * @return
      * The numUsers
      */
-    public int getNumUsers(){ return numUsers; }
+    public int getNumUsers() {
+        return numUsers;
+    }
 
     /**
      *
      * @param numUsers
      * The numUsers
+     * @return
      */
-    public void setNumUsers(int numUsers){ this.numUsers = numUsers; }
+    public int setNumUsers(int numUsers) {
+        //this.numUsers = numUsers;
+        return numUsers;
+    }
 
     /**
      *

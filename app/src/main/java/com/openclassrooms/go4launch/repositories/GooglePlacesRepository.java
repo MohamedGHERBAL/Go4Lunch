@@ -7,19 +7,20 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
 import com.openclassrooms.go4launch.model.NearByAPIResponse;
 import com.openclassrooms.go4launch.model.Result;
+import com.openclassrooms.go4launch.model.User;
 import com.openclassrooms.go4launch.services.RetroInterface;
 import com.openclassrooms.go4launch.services.RetrofitClient;
-import com.openclassrooms.go4launch.ui.fragments.MapFragment;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
-import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -35,8 +36,12 @@ public class GooglePlacesRepository {
 
     // For DATAS
     private static GooglePlacesRepository GOOGLE_PLACES_REPOSITORY;
-
     private MutableLiveData<Result> mDetailRestaurant = new MutableLiveData<Result>();
+
+    private FirebaseFirestore db = FirebaseFirestore.getInstance();
+
+    private MutableLiveData<List<Result>> results = new MutableLiveData<>();
+    private List<Result> mResultsList = new ArrayList<>();
 
     // Constructors
     public GooglePlacesRepository() {
@@ -69,7 +74,7 @@ public class GooglePlacesRepository {
             public void onResponse(@NonNull Call<NearByAPIResponse> call, @NonNull Response<NearByAPIResponse> response) {
 
                 for (int i = 0; i < response.body().getResults().size(); i++) {
-                    Log.e(TAG, "getNearbyRestaurantsLiveData FOR");
+                    Log.i(TAG, "getNearbyRestaurantsLiveData FOR");
 
                     Double lat = response.body().getResults().get(i).getGeometry().getLocation().getLat();
                     Double lng = response.body().getResults().get(i).getGeometry().getLocation().getLng();
@@ -78,7 +83,10 @@ public class GooglePlacesRepository {
                     String vicinity = response.body().getResults().get(i).getVicinity();
 
                     LatLng latLng = new LatLng(lat, lng);
+
+                    int numUsers = response.body().getResults().get(i).getNumUsers();
                 }
+                mNearbyRestaurants.setValue(mResultsList);
                 mNearbyRestaurants.setValue(response.body().getResults());
             }
 
@@ -94,7 +102,7 @@ public class GooglePlacesRepository {
     // For DetailRestaurantActivity
     public MutableLiveData<Result> getRestaurantForDetail(String placeId) {
         Log.d(TAG, "getRestaurantForDetail");
-        Log.e(TAG, "PlaceID = " + placeId);
+        Log.i(TAG, "PlaceID = " + placeId);
 
         String url = "https://maps.googleapis.com/maps/";
 
@@ -121,4 +129,27 @@ public class GooglePlacesRepository {
         Log.d(TAG, "getRestaurantForDetail the end !");
         return mDetailRestaurant;
     }
+
+    public void increaseResultsNumUsers(String currentRestId) {
+        Log.i(TAG, "increaseResultsNumUsers");
+
+        for (Result result : mResultsList) {
+            if (result.getPlaceId().equals(currentRestId)) {
+                result.setNumUsers(result.getNumUsers() + 1);
+            }
+        }
+        results.setValue(mResultsList);
+    }
+
+    public void decreaseResultsNumUsers(String currentRestId){
+        Log.i(TAG, "decreaseResultsNumUsers");
+
+        for (Result result : mResultsList) {
+            if (result.getPlaceId().equals(currentRestId)) {
+                result.setNumUsers(result.getNumUsers() - 1);
+            }
+        }
+        results.setValue(mResultsList);
+    }
+
 }

@@ -14,37 +14,56 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
+
         <activity
             android:name=".ui.DetailRestaurantActivity"
-            android:exported="false" />
+            android:theme="@style/AppTheme.NoActionBar" />
+
         <!-- SETTINGS ACTIVITY -->
         <activity
             android:name=".ui.SettingsActivity"
             android:exported="false"
-            android:label="@string/toolbar_title_main_activity" /> <!-- LOGIN ACTIVITY : App Launcher -->
+            android:label="@string/toolbar_title_settings_activity" />
+
+        <!-- LOGIN ACTIVITY : App Launcher -->
         <activity
             android:name=".ui.LoginActivity"
-            android:exported="true"
-            android:theme="@style/AppTheme.NoTitle"> <!-- android:theme DISABLE TOOLBAR IN LOGIN ACTIVITY -->
+            android:exported="true" >
+
+            <!-- android:theme DISABLE TOOLBAR IN LOGIN ACTIVITY -->
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity> <!-- MAIN ACTIVITY -->
+        </activity>
+
+        <!-- MAIN ACTIVITY -->
         <activity
             android:name=".ui.MainActivity"
             android:label="@string/toolbar_title_main_activity"
-            android:parentActivityName=".ui.LoginActivity" /> <!-- PROFILE ACTIVITY -->
-        <activity
-            android:name=".ui.ProfileActivity"
-            android:label="@string/toolbar_title_login_activity"
-            android:parentActivityName=".ui.LoginActivity" /> <!--  -->
+            android:parentActivityName=".ui.LoginActivity" />
+
+        <!-- PROFILE ACTIVITY -->
+
+        <!-- NOTIFICATION SERVICE -->
+        <service
+            android:name=".notification.NotificationService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
+
+
+        <!--  -->
         <uses-library
             android:name="org.apache.http.legacy"
-            android:required="false" /> <!-- API KEY -->
+            android:required="false" />
+
+        <!-- API KEY -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/map_key" />

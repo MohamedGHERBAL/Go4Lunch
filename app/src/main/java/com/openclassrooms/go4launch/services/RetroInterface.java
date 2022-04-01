@@ -1,6 +1,7 @@
 package com.openclassrooms.go4launch.services;
 
 import com.firebase.ui.auth.data.model.User;
+import com.openclassrooms.go4launch.BuildConfig;
 import com.openclassrooms.go4launch.model.NearByAPIResponse;
 import com.openclassrooms.go4launch.model.Result;
 
@@ -21,7 +22,7 @@ public interface RetroInterface {
      * Retrofit get annotation with our URL
      * And our method that will return us details of student.
      */
-    @GET("place/nearbysearch/json?sensor=true&key=AIzaSyCl61H4olbn8hk-whs8j4CYC5KEipU4dcY")
+    @GET("place/nearbysearch/json?sensor=true&key=" + BuildConfig.PLACE_API)
     Call<NearByAPIResponse> getNearbyPlaces(
             @Query("type") String type,
             @Query("location") String location,
@@ -31,7 +32,7 @@ public interface RetroInterface {
      *
      *
      */
-    @GET("place/details/json?categories=basic&key=AIzaSyCl61H4olbn8hk-whs8j4CYC5KEipU4dcY")
+    @GET("place/details/json?categories=basic&key=" + BuildConfig.PLACE_API)
     Call<NearByAPIResponse> getDetailResult(
             @Query("place_id") String placeId
     );

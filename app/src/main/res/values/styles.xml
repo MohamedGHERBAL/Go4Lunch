@@ -5,6 +5,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
     </style>
 
     <!-- No ActionBar theme -->
@@ -15,16 +16,44 @@
         <item name="android:windowTranslucentNavigation">true</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="windowActionBar">false</item>
+    </style>
+
+    <style name="DetailToolBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="windowActionBar">true</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <!-- Support library compatibility -->
+        <item name="windowActionBarOverlay">true</item>
+    </style>
+
 
     <!-- STYLE FOR TOOLBAR -->
+    <!-- Toolbar theme. -->
     <style name="ToolBarStyle" parent="AppTheme">
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="colorControlNormal">@android:color/white</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
 
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textColor">@color/titleColor</item> <!-- Color of the title text on the Toolbar -->
     </style>
 
     <style name="DropDownListViewStyle" parent="Widget.AppCompat.ListView.DropDown">
         <item name="android:background">@color/colorPrimary</item>
     </style>
+
+    <style name="ToolBarCustomStyle">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+
 
     <!-- STYLE FOR MAIN ACTIVITY -->
     <style name="AppTheme.NoTitle" parent="AppTheme">
@@ -33,22 +62,31 @@
         <item name="actionBarTheme">@null</item>
     </style>
 
+    <!-- STYLE SIGN-IN ACTIVITY (OLD)
+    <style name="LoginTheme" parent="AppTheme.NoTitle">
+    <item name="colorPrimary">@color/colorPrimary</item>
+    <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+    <item name="colorAccent">@color/colorAccent</item>
+    <item name="colorButtonNormal">@color/colorAccent</item>
+    <item name="colorControlNormal">@android:color/darker_gray</item>
+    <item name="colorControlActivated">@android:color/darker_gray</item>
+    <item name="colorControlHighlight">@android:color/darker_gray</item>
+    <item name="android:textColor">@android:color/white</item>
+    <item name="android:textColorPrimary">@android:color/darker_gray</item>
+    <item name="android:textColorSecondary">@android:color/darker_gray</item>
+    <item name="android:windowBackground">@android:color/white</item>
+    <item name="windowActionBar">false</item>
+    <item name="windowNoTitle">true</item>
+    <item name="android:textColorHint">@android:color/darker_gray</item>
+    -->
+
     <!-- STYLE SIGN-IN ACTIVITY -->
-    <style name="LoginTheme" parent="AppTheme">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="colorButtonNormal">@color/colorAccent</item>
-        <item name="colorControlNormal">@android:color/darker_gray</item>
-        <item name="colorControlActivated">@android:color/darker_gray</item>
-        <item name="colorControlHighlight">@android:color/darker_gray</item>
-        <item name="android:textColor">@android:color/white</item>
-        <item name="android:textColorPrimary">@android:color/darker_gray</item>
-        <item name="android:textColorSecondary">@android:color/darker_gray</item>
-        <item name="android:windowBackground">@android:color/white</item>
-        <item name="windowActionBar">false</item>
+    <style name="LoginTheme" parent="AppTheme.NoTitle">
         <item name="windowNoTitle">true</item>
-        <item name="android:textColorHint">@android:color/darker_gray</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:textColorHint">@android:color/white</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowBackground">@drawable/background_image</item>
     </style>
 
     <!-- STYLE fragment_list_item.xml -->
