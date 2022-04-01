@@ -58,6 +58,7 @@ public class GooglePlacesRepository {
         return GOOGLE_PLACES_REPOSITORY;
     }
 
+    // For Fragements
     public LiveData<List<Result>> getNearbyRestaurantsLiveData(String type, double latitude, double longitude) {
         Log.d(TAG, "getNearbyRestaurantsLiveData");
         final MutableLiveData<List<Result>> mNearbyRestaurants = new MutableLiveData<>();
@@ -128,28 +129,6 @@ public class GooglePlacesRepository {
         });
         Log.d(TAG, "getRestaurantForDetail the end !");
         return mDetailRestaurant;
-    }
-
-    public void increaseResultsNumUsers(String currentRestId) {
-        Log.i(TAG, "increaseResultsNumUsers");
-
-        for (Result result : mResultsList) {
-            if (result.getPlaceId().equals(currentRestId)) {
-                result.setNumUsers(result.getNumUsers() + 1);
-            }
-        }
-        results.setValue(mResultsList);
-    }
-
-    public void decreaseResultsNumUsers(String currentRestId){
-        Log.i(TAG, "decreaseResultsNumUsers");
-
-        for (Result result : mResultsList) {
-            if (result.getPlaceId().equals(currentRestId)) {
-                result.setNumUsers(result.getNumUsers() - 1);
-            }
-        }
-        results.setValue(mResultsList);
     }
 
 }
