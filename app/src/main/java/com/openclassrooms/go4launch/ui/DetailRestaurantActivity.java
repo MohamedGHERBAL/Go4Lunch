@@ -217,7 +217,6 @@ public class DetailRestaurantActivity extends AppCompatActivity {
 
                 detailRestaurantViewModel.updateCurrentUser(result.getName(), result.getPlaceId(), FirebaseAuth.getInstance().getCurrentUser().getUid());
                 //RestHelper.createRest(result.getPlaceId(), result.getName(), result.setNumUsers(result.getNumUsers()) + 1);
-                detailRestaurantViewModel.increaseResultsNumUsers(result.getPlaceId());
 
             } else {
                 Log.d(TAG, "configFloatingActionButton -> floatingActionButton -> ELSE");
@@ -225,7 +224,6 @@ public class DetailRestaurantActivity extends AppCompatActivity {
 
                 detailRestaurantViewModel.updateCurrentUser("", "", FirebaseAuth.getInstance().getCurrentUser().getUid());
                 //RestHelper.createRest(result.getPlaceId(), result.getName(), result.getNumUsers());
-                detailRestaurantViewModel.decreaseResultsNumUsers(result.getPlaceId());
             }
         });
     }

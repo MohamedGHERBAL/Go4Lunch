@@ -86,16 +86,6 @@ public class ViewModel extends AndroidViewModel {
         return mUserRepository.getFilteredUserList(restName);
     }
 
-    public void increaseResultsNumUsers(String currentRestId) {
-        mGooglePlacesRepository.increaseResultsNumUsers(currentRestId);
-    }
-
-    public void decreaseResultsNumUsers(String currentRestId) {
-        Log.i(TAG, "decreaseResultsNumUsers");
-
-        mGooglePlacesRepository.decreaseResultsNumUsers(currentRestId);
-    }
-
     public void updateCurrentUser(String restName, String restId, String uid) {
         Log.i(TAG, "updateCurrentUser");
 
