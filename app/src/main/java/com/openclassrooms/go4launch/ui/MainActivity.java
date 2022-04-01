@@ -147,24 +147,24 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 } else {
                     Toast.makeText(getApplicationContext(), R.string.No_restaurant_selected_yet, Toast.LENGTH_LONG).show();
                 }
-
                 return true;
+
             case R.id.nav_drawer_settings:
                 Intent intent = new Intent(this, SettingsActivity.class);
                 startActivity(intent);
-
                 return true;
+
             case R.id.nav_drawer_logout:
                 FirebaseAuth.getInstance().signOut();
                 //signOutUserFromFirebase();
                 startActivity(new Intent(this, LoginActivity.class));
-                finish();
+                //finish();
                 return true;
+
             default:
                 break;
         }
         this.drawerLayout.closeDrawer(GravityCompat.START);
-
         return false;
     }
 
